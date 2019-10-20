@@ -1,0 +1,12 @@
+.err{
+    color: red;
+    visibility: hidden;
+}
+
+#radButtons{
+    display: none;
+}
+
+#other{
+    display: none;
+}
