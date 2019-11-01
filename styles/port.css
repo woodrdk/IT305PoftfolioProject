@@ -1,0 +1,35 @@
+.right-stick {
+    position: fixed;
+    right: -122px;
+    top:50%;
+    -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);z-index: 9999;
+}
+.right-stick a {
+    padding:36px 36px;
+    font-size: 22px;
+    color: #fff;
+    background-color: #000000;
+    text-transform: uppercase;
+}
+.right-stick a:hover {
+    background: #0e0e0e;
+}
+
+@media(max-width:768px){
+    .right-stick {top:55%; display:none}
+}
+
+@media(max-width:991px){
+    .right-stick {right: -94px;}
+    .right-stick a {padding: 10px 20px;font-size: 18px;}
+}
+
+#aboutMe {
+    height: 100%;
+    width: 100%;
+    font-family: 'Rubik', sans-serif;
+    font-size: 22px;
+
+}
