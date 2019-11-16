@@ -16,6 +16,8 @@
 
 
 <?php
+//Connect to db
+require ('/home/rwoodgre/connect.php');
 
 $firstName = $_POST['firstName'];       // required
 $lastName = $_POST['lastName'];         // required
@@ -90,8 +92,8 @@ if($isValid) {
 }
 // require '';
 
-if($isValid) {
-    $query = "INSERT INTO book (first_name, last_name, email, title, company, linked, comment)
+//if($isValid) {
+    $query = "INSERT INTO Guestbook (first_name, last_name, email, title, company, linked, comment)
                                     VALUES ('$firstName', '$lastName', '$email', '$title', '$company', '$linked', '$comment' )";
     $Result = mysqli_query($cnxn, $query);
 
@@ -101,7 +103,7 @@ if($isValid) {
     else{
         echo "Something Didnt Work";
     }
-}
+//}
 ?>
 
 
