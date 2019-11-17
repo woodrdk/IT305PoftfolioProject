@@ -90,7 +90,7 @@
                                     Please enter a first name
                             </span>
                             </label>
-                            <input type="text" class="form-control" id="firstName" >
+                            <input type="text" class="form-control" id="firstName" name="firstName">
 
                         </div>
                     </div>
@@ -103,19 +103,19 @@
                                     Please enter a last name
                                 </span>
                             </label>
-                            <input type="text" class="form-control" id="lastName" >
+                            <input type="text" class="form-control" id="lastName" name="lastName">
 
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="title" class="font-weight-bold" >What is your title?</label>
-                    <input type="text" class="form-control" id="title" >
+                    <input type="text" class="form-control" id="title" name="title" >
                 </div>
 
                 <div class="form-group">
                     <label for="company" class="font-weight-bold" >What is your company?</label>
-                    <input type="text" class="form-control" id="company" >
+                    <input type="text" class="form-control" id="company" name="company">
                     <span class="err" id="err-company">
 
                     </span>
@@ -127,11 +127,11 @@
                     <span class="err" id="err-email">
                                    * Please enter a valid email address
                     </span>
-                    <input type="text" class="form-control" id="email" >
+                    <input type="text" class="form-control" id="email" name="email">
                 </div>
 
                 <div class="form-check">
-                    <input class="form-check-input font-weight-bold" type="checkbox" value="mail" id="mail">
+                    <input class="form-check-input font-weight-bold" type="checkbox" id="mail" name="mail">
                     <label class="form-check-label" for="mail">
                         Check here to be added to the email mailing list.
                     </label>
@@ -139,7 +139,7 @@
                 <div id="radButtons">
                     <div class="form-check">
                         Which email format would you prefer? <br/>
-                        <input class="form-check-input" type="radio" name="method" id="html" value="html">
+                        <input class="form-check-input" type="radio" name="method" id="html" value="html" checked>
                         <label class="form-check-label" for="html">
                             HTML
                         </label>
@@ -156,26 +156,26 @@
                     <span class="err" id="err-linked">
                         * Please enter a valid LinkedIn website address
                     </span>
-                    <input type="text" class="form-control" id="linked" >
+                    <input type="text" class="form-control" id="linked" name="linked">
                 </div>
 
                 <div class="form-group">
                     <label for="comment" class="font-weight-bold" >Comment</label>
-                    <textarea class="form-control" id="comment" rows="5"></textarea>
+                    <textarea class="form-control" id="comment" rows="5" name="comment"></textarea>
                 </div>
             </fieldset>
 
             <fieldset>
                 <div class="form-group">
                     <label for="how" class="font-weight-bold" >How did we meet? <span class="req">*</span></label>
-                    <select class="form-control" id="how" onchange="howMet()">
+                    <select class="form-control" id="how" name="how">
                         <option value="none">Choose from the options below:</option>
-                        <option value="job">Job</option>
-                        <option value="jobfair">Job Fair</option>
-                        <option value="meetup">Meetup</option>
-                        <option value="other">Other (Please specify)</option>
-                        <option value="school">School</option>
-                        <option value="havent">We haven't met yet.</option>
+                        <option value="Job">Job</option>
+                        <option value="Jobfair">Job Fair</option>
+                        <option value="Meetup">Meetup</option>
+                        <option value="Other">Other (Please specify)</option>
+                        <option value="School">School</option>
+                        <option value="Have not met yet.">We haven't met yet.</option>
                     </select>
                     <span class="err" id="err-how">
                         Please select an option
@@ -183,12 +183,13 @@
                 </div>
                 <div class="form-group" id="other">
                     <label for="howOther" class="font-weight-bold" >How we met, other:</label>
-                    <textarea class="form-control" id="howOther" rows="5" placeholder="Please specify"></textarea>
+                    <textarea class="form-control" id="howOther" rows="5" placeholder="Please specify" name="howOther"></textarea>
                 </div>
             </fieldset>
 
             <br/>
             <button id="submit" type="submit" class="btn btn-primary "> Submit your post</button>
+
         </form>
     </div>
 
@@ -216,5 +217,18 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="scripts/bookScript.js"></script>
     <script src="scripts/portScripts.js"></script>
+    <script>
+        $("#how").on("change", function(){
+            var howWeMet = $('#how').find(":selected").val();
+            if(howWeMet === "Other" ){
+                let other = document.getElementById("other");
+                other.style.visibility = "visible";
+                $('#other').show();
+            }
+            else{
+                $('#other').hide();
+            }
+        });
+    </script>
     </body>
 </html>

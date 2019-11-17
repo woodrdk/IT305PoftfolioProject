@@ -15,8 +15,10 @@
     <!-- Material Design Bootstrap -->
     <link type="text/css" href="styles/mdb.min.css" rel="stylesheet">
     <!-- .css -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="styles/port.css">
     <link rel="stylesheet" type="text/css" href="styles/bookCSS.css">
+
     <style>
         #code{
 
@@ -74,7 +76,63 @@
     <div>
         <h1 class="text-center p-5">Welcome To Rob's Guestbook Entries</h1>
     </div>
+    <div>
+        <?php
 
+            require '/home/ostricha/connect.php';
+
+            // Define the query
+            $sql = "SELECT first_name, last_name, phone_number, email, dob, gender, ethnicity, food, graduation_year,
+                           colleges, career
+                    FROM contact , dreamer, ethnicity
+                    WHERE contact.contact_id = dreamer.contact_id && dreamer.ethnicity_id = ethnicity.ethnicity_id
+                    ORDER BY reg_date, last_name, first_name ASC";
+
+            // send query to the database
+            $result = mysqli_query($cnxn,$sql);
+            // var_dump($result);
+        ?>
+        <table id="gb-entries-table" class="display">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Email</th>
+                    <th>Mailing List</th>
+                    <th>Mailing List Format</th>
+                    <th>LinkedIn Address</th>
+                    <th>Comment</th>
+                    <th>How we met</th>
+                </tr>
+            </thead>
+            <tbody>
+    <!--            <?php
+
+                    while($row = mysqli_fetch_assoc($result)) {
+
+                        $first = $row['first_name'];
+                        $last = $row['last_name'];
+
+                        $email = $row['email'];
+
+                        echo "<tr>
+                              <td>$first, $last</td>
+                              <td></td>
+                              <td></td>
+                              <td><a href='mailto:$email'>$email</a></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                              <td></td>";
+                    }
+                ?>-->
+            </tbody>
+
+        </table>
+    </div>
 </div>
 
 <!-- icons-->
@@ -101,5 +159,29 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="scripts/bookScript.js"></script>
 <script src="scripts/portScripts.js"></script>
+<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
+<script>
+    $('#gb-entries-table').DataTable();
+    $(document).ready(function() {
+
+        let table = $('#dreamer-table').DataTable( {
+            paging: false,
+            retrieve: true,
+            searching: false,
+        } );
+        table.column(7).visible(false);
+        table.column(9).visible(false);
+        table.column(10).visible(false);
+
+        $('a.toggle-vis').on('click', function (e) {
+            e.preventDefault();
+
+            // Get the column API object
+            var column = table.column($(this).attr('data-column'));
+            // Toggle the visibility
+            column.visible(!column.visible());
+        });
+    });
+</script>
 </body>
 </html>
