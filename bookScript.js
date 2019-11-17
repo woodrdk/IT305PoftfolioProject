@@ -92,7 +92,7 @@ $("#mail").on("change", function(){
 });
 
 // Makes other text box show up if how we met selected is other
-/*function howMet(){
+/*$("#how").on("change", function(){
     var howWeMet = $('#how').find(":selected").val();
     if(howWeMet === "other" ){
         let other = document.getElementById("other");
@@ -102,7 +102,7 @@ $("#mail").on("change", function(){
     else{
         $('#other').hide();
     }
-}*/
+});*/
 
 // Checks if url is proper format
 function is_url(url)
