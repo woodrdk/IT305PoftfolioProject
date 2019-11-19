@@ -24,28 +24,23 @@
 <div id="nav-container-top"></div>
 <div class="container-fluid">
     <div class="container">
-        <div class="my-auto">
-            <div class="row my-sm-4" id="">
-                <div id="bio" class="col-sm-12 col-xl-7 my-auto">
-                    <div class="container">
-                        <pre id="typewriter">
-                            <span class="var-highlight">var</span> object = {
-                                name: <span class="string-highlight">'Robert Wood Jr.'</span>,
-                                type: <span class="string-highlight">'Software Developer'</span>,
-                                location: <span class="string-highlight">'Spanaway, Washington'</span>,
-                                properties:[<span class="string-highlight">'Javascript'</span>,
-                                            <span class="string-highlight">'HTML'</span>,
-                                            <span class="string-highlight">'CSS'</span>,
-                                            <span class="string-highlight">'PHP'</span>,
-                                            <span class="string-highlight">'SQL'</span>,
-                                            <span class="string-highlight">'C#'</span>,
-                                            <span class="string-highlight">'JAVA'</span>,
-                                            <span class="string-highlight">'and more...'</span>];
-                                };
-                        </pre>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+            <pre id="typewriter">
+                <span class="var-highlight">var</span> object = {
+                    name: <span class="string-highlight">'Robert Wood Jr.'</span>,
+                    type: <span class="string-highlight">'Software Developer'</span>,
+                    location: <span class="string-highlight">'Spanaway, Washington'</span>,
+                    properties:[<span class="string-highlight">'Javascript'</span>,
+                    <span class="string-highlight">'HTML'</span>,
+                    <span class="string-highlight">'CSS'</span>,
+                    <span class="string-highlight">'PHP'</span>,
+                    <span class="string-highlight">'SQL'</span>,
+                    <span class="string-highlight">'C#'</span>,
+                    <span class="string-highlight">'JAVA'</span>,
+                    <span class="string-highlight">'and more...'</span>];
+                };
+
+            </pre>
         </div>
     </div>
 </div>
@@ -426,25 +421,26 @@
                     tag = newSpan.firstChild;
                 }
             }
-
             cursorPosition += 1;
             if (cursorPosition < HTML.length - 1) {
                 setTimeout(type, tempTypeSpeed);
-
             }
-            // let pageLoad = document.getElementById("preType").hidden = false;
         };
 
         return {
             type: type
         };
+
     }
 
     let typer = document.getElementById('typewriter');
-
+    let done = false;
     typewriter = setupTypewriter(typewriter);
 
     typewriter.type();
+    if(done){
+        let pageLoad = document.getElementById("preType").hidden = false;
+    }
     // https://codepen.io/stevn/pen/jEZvXa
     /// diag the css fail
 </script>
