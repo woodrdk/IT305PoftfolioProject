@@ -57,7 +57,7 @@
                 <a class="nav-link" href="guestbook.html">Guestbook</a>
             </li>
             <li>
-                <a class="nav-link" href="admin.php">Admin</a>
+                <a class="nav-link" href="logout.php">Logout</a>
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">

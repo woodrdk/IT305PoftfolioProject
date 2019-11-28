@@ -19,12 +19,34 @@
     <link type="text/css" href="styles/mdb.min.css" rel="stylesheet">
     <!-- .css -->
     <link rel="stylesheet" type="text/css" href="styles/port.css">
+    <style>
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 150px;
+            width: 100%;
+        }
+
+        .videoWrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 */
+            padding-top: 25px;
+            height: 0;
+        }
+        .videoWrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
 <div id="nav-container-top"></div>
-<div class="container-fluid">
-    <div class="container">
-        <div class="container">
+<div class="container-fluid d-none d-lg-block" id="codeWriter">
+    <div class="row">
+        <div class="col-xs-1">
             <pre id="typewriter">
                 <span class="var-highlight">var</span> object = {
                     name: <span class="string-highlight">'Robert Wood Jr.'</span>,
@@ -44,7 +66,10 @@
         </div>
     </div>
 </div>
-<div id="preType" >
+<div class="footer  text-center d-none d-lg-block">
+    <button onclick="skip()" id="skip">Learn More</button>
+</div>
+<div id="preType" hidden >
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
         <a class="navbar-brand" href="index.php">RW</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,13 +78,13 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://rwood.greenriverdev.com/305/resume/index.html">Resume</a>
+                    <a class="nav-link" href="http://rwood.greenriverdev.com/305/resume/index.html"  target="_blank">Resume</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Portfolio</a>
+                    <a class="nav-link" href="#projects">Portfolio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="guestbook.html">Guestbook</a>
@@ -79,6 +104,7 @@
         </div>
 
 </nav>
+
     <div class="container-fluid w-responsive mx-auto mb-5"><br>
         <div class="row">
             <div class="col-md-4">
@@ -99,11 +125,8 @@
 
         </div>
 
-
-
-
-
         <div class="text-center" id="projects">
+            <hr>
             <h1>Projects</h1>
             <div class="row mb-2">
                 <div class="col-sm-3">
@@ -242,14 +265,27 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-sm-6 videoWrapper">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="videoWrapper">
+                                <iframe  src="https://www.youtube.com/embed/dWNtahTzJDY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div>
+                                <p>First ever video tutorial</p>
+                                <p>This tutorial used java to ask for 5 numbers of the user and return the lowest, average and the highest number of the 5 numbers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 <div class="container-fluid text-center w-responsive mx-auto mb-5"><br>
     <div class="text-center" id="contact">
-        <h1>Contact me here</h1>
-
+        <div>
+            <h1>Contact me here</h1>
+        </div>
         <div class="card">
             <div class="card-body">
                 <p class="text-center w-responsive mx-auto mb-5">
@@ -404,8 +440,13 @@
                 }
             }
             cursorPosition += 1;
+            //alert(cursorPosition);
             if (cursorPosition < HTML.length - 1) {
                 setTimeout(type, tempTypeSpeed);
+            }
+
+            if(cursorPosition === 907){
+               skip();
             }
         };
 
@@ -414,7 +455,11 @@
         };
 
     }
-
+    function skip(){
+        document.getElementById("preType").hidden = false;
+        document.getElementById("skip").hidden = true;
+        document.getElementById("typewriter").hidden = true;
+    }
     let typer = document.getElementById('typewriter');
     let done = false;
     typewriter = setupTypewriter(typewriter);
@@ -425,6 +470,10 @@
     }
     // https://codepen.io/stevn/pen/jEZvXa
     /// diag the css fail
+
+    if ($(window).width() < 960) {
+        skip();
+    }
 </script>
 
 </body>
