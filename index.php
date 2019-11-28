@@ -44,9 +44,9 @@
         </div>
     </div>
 </div>
-<div id="preType" hidden>
+<div id="preType" >
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-        <a class="navbar-brand" href="#">RW</a>
+        <a class="navbar-brand" href="index.php">RW</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -64,7 +64,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="guestbook.html">Guestbook</a>
                 </li>
-
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Admin</a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -224,26 +226,6 @@
                                 The web application was made with a variety of languages and frameworks including JavaScript/JQuery, HTML, CSS, .Net Core, C#, Ajax
                                 BootStrap and SQL Server. There were also a few APIS used in this including a few from Google and Facebook.
                             </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <h5 class="card-title">Android app for spinal</h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <img class="card-img-top" src="..." alt="Card image cap">
-                            <h5 class="card-title">Tic Tac Toe android app </h5>
-                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
                         </div>
                     </div>
                 </div>

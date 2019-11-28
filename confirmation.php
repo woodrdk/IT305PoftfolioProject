@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Rob's Guestbook Confirmation</title>
-
     <!-- FAVICON -->
     <link rel="icon" type="image/jpg" href="images/gears.ico">
     <!-- Font Awesome -->
@@ -12,10 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Material Design Bootstrap -->
     <link type="text/css" href="styles/mdb.min.css" rel="stylesheet">
-    <!-- .css -->
     <link rel="stylesheet" type="text/css" href="styles/port.css">
     <link rel="stylesheet" type="text/css" href="styles/bookCSS.css">
     <style>
@@ -24,7 +20,6 @@
             left: 0;
             bottom: 0;
             width: 100%;
-
         }
         body{
             background-color: lightgrey;
@@ -33,15 +28,12 @@
             color: red;
         }
     </style>
-    <!-- Material Design Bootstrap -->
     <link type="text/css" href="styles/mdb.min.css" rel="stylesheet">
-    <!-- .css -->
     <link rel="stylesheet" type="text/css" href="styles/port.css">
-
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-    <a class="navbar-brand" href="#">RW</a>
+    <a class="navbar-brand" href="index.php">RW</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -62,7 +54,6 @@
             <li>
                 <a class="nav-link" href="admin.php">Admin</a>
             </li>
-
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -73,21 +64,15 @@
             </li>
         </ul>
     </div>
-
 </nav>
-
-
 <br/>
 <div class="container pb-5" id="main">
     <div>
         <h1 class="text-center p-5">Thank you for your entry.</h1>
     </div>
-
     <h2 class="text-center">Thanks for checking out this site please check out out others including <a href="http://www.rdkwood.com">RDKWOOD.com</a> </h2>
-
     <?php
-
-       //var_dump($_POST);
+    //var_dump($_POST);
     $firstName = $_POST['firstName'];       // required
     $lastName = $_POST['lastName'];         // required
     $title = $_POST['title'];
@@ -114,7 +99,6 @@
     if($howMet === "Other"){
         $howMet = $howMetOther;
     }
-
     $formValues = array(
         'First Name' => $firstName,
         'Last Name' => $lastName,
@@ -134,7 +118,6 @@
         echo "<p>First name is required</p>";
         $isValid = false;
     }
-
     // last name validation
     if($lastName != ""){
     }
@@ -142,7 +125,6 @@
         echo "<p>Last name is required</p>";
         $isValid = false;
     }
-
     // $email = filter_var($email, FILTER_SANITIZE_EMAIL);
     if($mail == "Yes, please add me to the mailing list"){
         if($email == ""){
@@ -150,7 +132,6 @@
             $isValid = false;
         }
         else if ($email != "" && filter_var($email, FILTER_VALIDATE_EMAIL)){
-
         }
         else{
             echo "<p>Invalid email for the mailing list</p>";
@@ -167,13 +148,11 @@
                 $isValid = false;
             }
         }
-
     }
     if($howMet == "" || $howMet == 'none'){
         echo "<p>How met we met is required</p>";
         $isValid = false;
     }
-
     if($linked != ""){
         if(!filter_var($linked, FILTER_VALIDATE_URL)){
             echo "<p>Invalid URL for LinkedIn</p>";
@@ -211,10 +190,8 @@
             echo "Something Didnt Work please try again";
         }
     }
-
     ?>
 </div>
-
 <!--<div class="right-stick">
     <a href="#">Let's work together!</a>
 </div>-->
@@ -227,9 +204,7 @@
         <!--<i class='fab fa-adobe' style='font-size:48px;color:red'></i>-->
         <!--<i class='fab fa-accessible-icon' style='font-size:48px;color:blue'></i>-->
     </div>
-
 </nav>
-
 <!-- jQuery first, then Popper, then Bootstrap, then developer made -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

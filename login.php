@@ -1,15 +1,38 @@
 <?php
-    //Start the session
+    //Turn on error reporting
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+
+    //Start a session
     session_start();
-    if(!isset($_SESSION['username'])){
-        header('location: login.php');
+    //If the user is already logged in
+    if(isset($_SESSION['username'])){
+        //Redirect to page 1
+        header('location: admin.php');
     }
-    ?>
-<!DOCTYPE html>
+    //If the login form has been submitted
+    if(isset($_POST['submit'])){
+        //Include creds.php (temp storage)
+        include('creds.php');
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        if(array_key_exists($username, $logins) && $logins["$username"] == $password){
+            $_SESSION['username'] = $username;
+            header('location: admin.php');
+        }
+        echo "<p>Invalid Login</p>";
+    }
+?>
+
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Rob's Guestbook Entries</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rob's Portfolio Log In</title>
     <!-- FAVICON -->
     <link rel="icon" type="image/jpg" href="images/gears.ico">
     <!-- Font Awesome -->
@@ -37,6 +60,7 @@
     </style>
 </head>
 <body>
+
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
     <a class="navbar-brand" href="index.php">RW</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,75 +97,23 @@
 
 <div class="container pb-5" id="main">
     <div>
-        <h1 class="text-center p-5">Welcome To Rob's Guestbook Entries</h1>
+        <h1 class="text-center p-5">Login To View Rob's Guestbook Entries</h1>
     </div>
     <div>
-        <?php
-            require ('/home/rwoodgre/connect.php');
-            // Define the query
-            $sql = "SELECT *
-                    FROM Guestbook
-                    ORDER BY added ASC";
-            // send query to the database
-            $result = mysqli_query($cnxn,$sql);
-            // var_dump($result);
-        ?>
-        <table id="gb-entries-table" class="display">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Title</th>
-                    <th>Company</th>
-                    <th>Email</th>
-                    <th>Mailing List</th>
-                    <th>Mailing List Format</th>
-                    <th>LinkedIn Address</th>
-                    <th>Comment</th>
-                    <th>How we met</th>
-                    <th>When added</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    while($row = mysqli_fetch_assoc($result)) {
-                        $first = $row['first_name'];
-                        $last = $row['last_name'];
-                        $title = $row['title'];
-                        $company = $row['company'];
-                        $email = $row['email'];
-                        $mailList = $row['mailing_list'];
-                        $mailFormat = $row['mail_list_format'];
-                        $linked = $row['linkedIn'];
-                        $comment = $row['comment'];
-                        $how = $row['how_we_met'];
-                        $when = $row['added'];
-                        if($mailList == 1){
-                            $mailList = "Subscribed";
-                        }
-                        else{
-                            $mailList = "Unsubscribed";
-                        }
+        <form method="post" action="#">
+            <label>Username:
+                <input type="text" name="username">
+            </label><br>
 
-                        echo "<tr>
-                              <td>$first, $last</td>
-                              <td>$title</td>
-                              <td>$company</td>
-                              <td><a href='mailto:$email'>$email</a></td>
-                              <td>$mailList</td>
-                              <td>$mailFormat</td>
-                              <td><a href='$linked'>$linked</a></td>
-                              <td>$comment</td>
-                              <td>$how</td>
-                              <td>$when</td>";
-                    }
-                ?>
-            </tbody>
-        </table>
+            <label>Password:
+                <input type="password" name="password">
+            </label><br>
+
+            <input type="submit" name="submit" value="Submit">
+        </form>
     </div>
 </div>
-<div class="right-stick">
-    <a href="#">Let's work together!</a>
-</div>
+
 <nav id="footer" class="navbar navbar-dark bg-dark">
     <div class="col-4 text-light"> &copy; October 2019 </div>
     <div>
@@ -159,26 +131,6 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="scripts/bookScript.js"></script>
 <script src="scripts/portScripts.js"></script>
-<script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"> </script>
-<script>
-    $('#gb-entries-table').DataTable();
-    $(document).ready(function() {
-        let table = $('#dreamer-table').DataTable( {
-            paging: false,
-            retrieve: true,
-            searching: false,
-        } );
-        table.column(7).visible(false);
-        table.column(9).visible(false);
-        table.column(10).visible(false);
-        $('a.toggle-vis').on('click', function (e) {
-            e.preventDefault();
-            // Get the column API object
-            var column = table.column($(this).attr('data-column'));
-            // Toggle the visibility
-            column.visible(!column.visible());
-        });
-    });
-</script>
+
 </body>
 </html>
