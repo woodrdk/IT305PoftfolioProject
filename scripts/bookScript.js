@@ -1,7 +1,7 @@
 
 
 // When form is submitted by the submit button it runs validate()
-document.getElementById("guest-form").onsubmit = validate;
+//document.getElementById("guest-form").onsubmit = validate;
 
 // Validates all required and if not valid shows errors
 function validate(){
@@ -92,7 +92,7 @@ $("#mail").on("change", function(){
 });
 
 // Makes other text box show up if how we met selected is other
-function howMet(){
+/*$("#how").on("change", function(){
     var howWeMet = $('#how').find(":selected").val();
     if(howWeMet === "other" ){
         let other = document.getElementById("other");
@@ -102,7 +102,7 @@ function howMet(){
     else{
         $('#other').hide();
     }
-}
+});*/
 
 // Checks if url is proper format
 function is_url(url)
