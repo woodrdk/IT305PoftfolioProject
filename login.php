@@ -1,16 +1,26 @@
 <?php
-    //Turn on error reporting
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
-
-    //Start a session
-    session_start();
-    //If the user is already logged in
-    if(isset($_SESSION['username'])){
-        //Redirect to page 1
+//Turn on error reporting
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+//Start a session
+session_start();
+//If the user is already logged in
+if(isset($_SESSION['username'])){
+    //Redirect to page 1
+    header('location: admin.php');
+}
+//If the login form has been submitted
+if(isset($_POST['submit'])){
+    //Include creds.php (temp storage)
+    include('creds.php');
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    if(array_key_exists($username, $logins) && $logins["$username"] == $password){
+        $_SESSION['username'] = $username;
         header('location: admin.php');
     }
-
+    echo "<p>Invalid Login</p>";
+}
 ?>
 
 <!doctype html>
@@ -119,16 +129,9 @@
     </div>
 </div>
 
-<nav id="footer" class="navbar navbar-dark bg-dark">
-    <div class="col-4 text-light"> &copy; October 2019 </div>
-    <div>
-        <i class="fa fa-github" style="font-size:48px;color:white"></i>
-        <i class="fa fa-linkedin-square" style="font-size:48px;color:dodgerblue"></i>
-        <i class="fa fa-envelope" style="font-size:48px;color:white"></i>
-        <!--<i class='fab fa-adobe' style='font-size:48px;color:red'></i>-->
-        <!--<i class='fab fa-accessible-icon' style='font-size:48px;color:blue'></i>-->
-    </div>
-</nav>
+<?php
+include ('footer.php');
+?>
 
 <!-- jQuery first, then Popper, then Bootstrap, then developer made -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
