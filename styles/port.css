@@ -1,3 +1,28 @@
+#aboutMe {
+    height: 25%;
+    width: 25%;
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+}
+
+body{
+    font-family: "Georgia", Georgia, serif;
+}
+
+@media(max-width:768px){
+    .right-stick {top:55%; display:none}
+}
+
+@media(max-width:991px){
+    .right-stick {right: -94px;}
+    .right-stick a {padding: 10px 20px;font-size: 18px;}
+}
+
+#nav-container-top {
+    height: 1px;
+    /*background-color: blue;*/
+}
+
 .right-stick {
     position: fixed;
     right: -122px;
@@ -17,19 +42,40 @@
     background: #0e0e0e;
 }
 
-@media(max-width:768px){
-    .right-stick {top:55%; display:none}
+#right-stick{
+    display:none;
 }
 
-@media(max-width:991px){
-    .right-stick {right: -94px;}
-    .right-stick a {padding: 10px 20px;font-size: 18px;}
+.var-highlight{
+    color: #C0AD60;
+}
+.string-highlight{
+    color: rgba(253, 149, 90, 0.8);
 }
 
-#aboutMe {
-    height: 100%;
-    width: 100%;
-    font-family: 'Rubik', sans-serif;
-    font-size: 22px;
-
+#typewriter{
+    font-size: 2em;
+    margin: 0;
+    font-family: "Courier New";
 }
+#typewriter::after{
+     content: "|";
+     animation: blink 500ms linear infinite alternate;
+    }
+
+
+@-webkit-keyframes blink{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@-moz-keyframes blink{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+
