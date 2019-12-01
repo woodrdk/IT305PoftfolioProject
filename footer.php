@@ -9,7 +9,7 @@ echo "<nav id='footer' class='navbar navbar-dark bg-dark'>
                 <i class='fa fa-linkedin-square' style='font-size:48px;color:dodgerblue'></i>
             </a>
             <a href='mailto:rdrwood@gmail.com'>
-                <i class='fa fa-envelope' style='font-size:48px;color:white''></i>
+                <i class='fa fa-envelope' style='font-size:48px;color:white'></i>
             </a>
             <!--<i class='fab fa-adobe' style='font-size:48px;color:red'></i>-->
             <!--<i class='fab fa-accessible-icon' style='font-size:48px;color:blue'></i>-->

@@ -45,7 +45,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link" href="index.php#Contact">Contact</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://rwood.greenriverdev.com/305/resume/index.html">Resume</a>
@@ -139,19 +139,9 @@
         </table>
     </div>
 </div>
-<div class="right-stick">
-    <a href="#">Let's work together!</a>
-</div>
-<nav id="footer" class="navbar navbar-dark bg-dark">
-    <div class="col-4 text-light"> &copy; October 2019 </div>
-    <div>
-        <i class="fa fa-github" style="font-size:48px;color:white"></i>
-        <i class="fa fa-linkedin-square" style="font-size:48px;color:dodgerblue"></i>
-        <i class="fa fa-envelope" style="font-size:48px;color:white"></i>
-        <!--<i class='fab fa-adobe' style='font-size:48px;color:red'></i>-->
-        <!--<i class='fab fa-accessible-icon' style='font-size:48px;color:blue'></i>-->
-    </div>
-</nav>
+<?php
+include ('footer.php');
+?>
 
 <!-- jQuery first, then Popper, then Bootstrap, then developer made -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

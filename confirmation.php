@@ -1,4 +1,8 @@
+<?php
+//Start the session
+session_start();
 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -195,16 +199,10 @@
 <!--<div class="right-stick">
     <a href="#">Let's work together!</a>
 </div>-->
-<nav id="footer" class="navbar navbar-dark bg-dark">
-    <div class="col-4 text-light"> &copy; October 2019 </div>
-    <div>
-        <i class="fa fa-github" style="font-size:48px;color:white"></i>
-        <i class="fa fa-linkedin-square" style="font-size:48px;color:dodgerblue"></i>
-        <i class="fa fa-envelope" style="font-size:48px;color:white"></i>
-        <!--<i class='fab fa-adobe' style='font-size:48px;color:red'></i>-->
-        <!--<i class='fab fa-accessible-icon' style='font-size:48px;color:blue'></i>-->
-    </div>
-</nav>
+<?php
+include ('footer.php');
+?>
+
 <!-- jQuery first, then Popper, then Bootstrap, then developer made -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
