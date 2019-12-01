@@ -71,7 +71,7 @@ session_start();
 
     <div class="container pb-5" id="main">
         <div>
-            <h1 class="text-center p-5">Welcome To Rob's Guestbook Entries</h1>
+            <h1 class="text-center p-5">Thank you for reaching out to me.</h1>
         </div>
         <div>
             <?php
@@ -89,7 +89,7 @@ session_start();
             $mailheader = "From: $email \r\n";
             $success = mail($recipient, $subject, $content, $mailheader) or die("Error!");
             if($success == true){
-                echo "Thank you your email containing the following has been sent! <br>";
+                echo "Thank you, your email containing the following has been succesfully sent to Rob! <br>";
                 echo "<br>
                       <ul>
                         <li>Name: $name</li>
@@ -99,7 +99,7 @@ session_start();
                       </ul>";
             }
             else{
-                echo "Sorry your email was not sent due to technical dificulties. Please try again.";
+                echo "We are sorry, your email was not sent due to technical dificulties. Please try again.";
             }
 
 
@@ -107,18 +107,11 @@ session_start();
         </div>
     </div>
     <div class="right-stick">
-        <a href="#">Let's work together!</a>
+        <a href="mailto:rdrwood@gmail.com">Let's work together!</a>
     </div>
-    <nav id="footer" class="navbar navbar-dark bg-dark">
-        <div class="col-4 text-light"> &copy; October 2019 </div>
-        <div>
-            <i class="fa fa-github" style="font-size:48px;color:white"></i>
-            <i class="fa fa-linkedin-square" style="font-size:48px;color:dodgerblue"></i>
-            <i class="fa fa-envelope" style="font-size:48px;color:white"></i>
-            <!--<i class='fab fa-adobe' style='font-size:48px;color:red'></i>-->
-            <!--<i class='fab fa-accessible-icon' style='font-size:48px;color:blue'></i>-->
-        </div>
-    </nav>
+    <?php
+    include ('footer.php');
+    ?>
 
     <!-- jQuery first, then Popper, then Bootstrap, then developer made -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
