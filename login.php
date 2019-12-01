@@ -10,19 +10,7 @@
         //Redirect to page 1
         header('location: admin.php');
     }
-    //If the login form has been submitted
-    if(isset($_POST['submit'])){
-        //Include creds.php (temp storage)
-        include('creds.php');
-        $username = $_POST['username'];
-        $password = $_POST['password'];
 
-        if(array_key_exists($username, $logins) && $logins["$username"] == $password){
-            $_SESSION['username'] = $username;
-            header('location: admin.php');
-        }
-        echo "<p>Invalid Login</p>";
-    }
 ?>
 
 <!doctype html>
@@ -111,6 +99,23 @@
 
             <input type="submit" name="submit" value="Submit">
         </form>
+    </div>
+    <div>
+        <?php
+        //If the login form has been submitted
+        if(isset($_POST['submit'])){
+            //Include creds.php (temp storage)
+            include('creds.php');
+            $username = $_POST['username'];
+            $password = $_POST['password'];
+
+            if(array_key_exists($username, $logins) && $logins["$username"] == $password){
+                $_SESSION['username'] = $username;
+                header('location: admin.php');
+            }
+            echo "<br><br><p>Invalid Login Please Try Again</brp>";
+        }
+        ?>
     </div>
 </div>
 
