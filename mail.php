@@ -2,6 +2,12 @@
 //Start the session
 session_start();
 
+// Turn on error reporting  -- this is critical
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,11 +76,9 @@ session_start();
 </nav>
 
 <div class="container pb-5" id="main">
-    <div>
-        <h1 class="text-center p-5">Thank you for reaching out to me.</h1>
-    </div>
-    <div>
-        <?php
+
+    <?php
+        $isValid = true;
         if(isset( $_POST['name']))
             $name = $_POST['name'];
         if(isset( $_POST['email']))
@@ -83,28 +87,66 @@ session_start();
             $message = $_POST['message'];
         if(isset( $_POST['subject']))
             $subject = $_POST['subject'];
+        if($name != ""){
+        }
+        else{
+            echo "<p>Name is required</p>";
+            $isValid = false;
+        }
 
-        $content="From: $name \n Email: $email \n Message: $message";
-        $recipient = "rdrwood@gmail.com";
-        $mailheader = "From: $email \r\n";
-        $success = mail($recipient, $subject, $content, $mailheader) or die("Error!");
-        if($success == true){
-            echo "Thank you, your email containing the following has been succesfully sent to Rob! <br>";
-            echo "<br>
+        if($email == ""){
+            echo "<p>Email is required</p>";
+            $isValid = false;
+        }
+        else if ($email != "" && filter_var($email, FILTER_VALIDATE_EMAIL)){
+        }
+        else{
+            echo "<p>Invalid email</p>";
+            $isValid = false;
+        }
+        if($subject != ""){
+        }
+        else{
+            echo "<p>Subject is required</p>";
+            $isValid = false;
+        }
+
+        if($message != ""){
+        }
+        else{
+            echo "<p>Message is required</p>";
+            $isValid = false;
+        }
+
+        if($isValid) {
+            echo "<div>
+                <h1 class='text-center p-5'>Thank you for reaching out to me.</h1>
+                </div>";
+            $content="From: $name \n Email: $email \n Message: $message";
+            $recipient = "rdrwood@gmail.com";
+            $mailheader = "From: $email \r\n";
+            $success = mail($recipient, $subject, $content, $mailheader) or die("Error!");
+            if($success == true){
+                echo "Thank you, your email containing the following has been succesfully sent to Rob! <br>";
+                echo "<br>
                       <ul>
                         <li>Name: $name</li>
                         <li>Email: $email</li>
                         <li>Subject: $subject</li>
                         <li>Message: $message</li>
                       </ul>";
+            }
+            else{
+                echo "We are sorry, your email was not sent due to technical difficulties. Please try again.";
+            }
         }
-        else{
-            echo "We are sorry, your email was not sent due to technical difficulties. Please try again.";
-        }
+    ?>
 
 
-        ?>
-    </div>
+  <!--  <div>
+        <h1 class="text-center p-5">Thank you for reaching out to me.</h1>
+    </div>-->
+
 </div>
 <div class="right-stick">
     <a href="mailto:rdrwood@gmail.com">Let's work together!</a>
