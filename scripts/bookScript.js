@@ -1,7 +1,7 @@
 
 
 // When form is submitted by the submit button it runs validate()
-//document.getElementById("guest-form").onsubmit = validate;
+document.getElementById("guest-form").onsubmit = validate;
 
 // Validates all required and if not valid shows errors
 function validate(){

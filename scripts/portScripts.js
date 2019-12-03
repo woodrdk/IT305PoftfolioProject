@@ -1,47 +1,59 @@
 
-
-window.onload =  typeWriter();
-
-var type = 0;
-var speed = 10;
-function typeWriter() {
-
-    let name = "Robert Wood Jr";
-    if( type < name.length){
-        document.getElementById("welcome").innerHTML += name.charAt(type);
-        type++;
-        typeWriter(type, speed);
+document.getElementById("contact-form").onsubmit = check;
+function check(){
+    isValid = true;
+    // Clears all error messages
+    var errors = document.getElementsByClassName("err");
+    for(var i = 0; i < errors.length; i++){
+        errors[i].style.visibility = "hidden";
     }
-    //document.getElementById("welcome").innerHTML += name.charAt(type);
-    //document.getElementById("welcomeText").innerHTML += position.charAt(type);
-    //type++;
-    //setTimeout(typeWriter, speed);
-    //position();
+
+    // Checks for first name
+    var name = document.getElementById("name").value;
+    if(name === ""){
+        var errName = document.getElementById("err-Name");
+        errName.style.visibility = "visible";
+        isValid = false;
+    }
+    // Checks for last name
+    var subject = document.getElementById("subject").value;
+    if(subject === ""){
+        var errSubject = document.getElementById("err-subject");
+        errSubject.style.visibility = "visible";
+        isValid = false;
+    }
+
+    // Checks for last name
+    var message = document.getElementById("message").value;
+    if(message === ""){
+        var errMessage = document.getElementById("err-message");
+        errMessage.style.visibility = "visible";
+        isValid = false;
+    }
+    // email check
+    if(!validateEmail()){
+        isValid = false;
+    }
+
+    return isValid;
 }
-/*
 
-function position(){
-    let position = "Software Developer";
-    document.getElementById("welcomeText").innerHTML += position.charAt(type);
-    type++;
-    setTimeout(typeWriter, speed);
-}*/
 
-/*
+function  validateEmail(){
+    var errEmail = document.getElementById("err-email");
+    var emailAddy = document.getElementById("email").value;
+    var email = document.getElementById("email").value;
 
-var type = 0;
-var speed = 10; //change back to 75 when done 10 is for testing sake
-function typeWriter() {
-    userName = document.getElementById("mainUserName").value.toUpperCase();
-    var txt = "Do you want to play YATZY " + userName + " ?";
-    document.getElementById("yourName").setAttribute("hidden", true);
-    document.getElementById("doYou").removeAttribute("hidden");
-    if (type < txt.length) {
-        document.getElementById("doYou").innerHTML += txt.charAt(type);
-        type++;
-        setTimeout(typeWriter, speed);
-    }
-    else{
-        document.getElementById("yesNoButton").removeAttribute("hidden");
-    }
-}*/
+        if(emailAddy === ""){
+            // If null makes error visible
+            errEmail.style.visibility = "visible";
+            return false;
+        }
+        else{
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
+                errEmail.style.visibility = "visible";
+                return false;
+            }
+        }
+    return true;
+}
