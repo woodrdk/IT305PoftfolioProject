@@ -41,6 +41,9 @@
             width: 100%;
             height: 100%;
         }
+        .req{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -69,7 +72,7 @@
     </div>
 
     <div class="footer  text-center d-none d-lg-block">
-        <button onclick="skip()" id="skip">Skip Animation & Learn More</button>
+        <button onclick="skip()" id="skip" class="btn btn-primary">Skip Animation & Learn More</button>
     </div>
 
     <div id="preType" hidden >
@@ -113,16 +116,17 @@
                 <img id="myPic2" class=" col rounded-circle" src="images/profile.jpg" alt="Rob's Profile picture">
             </div>
             <div class="col-md-8" id="aboutMe">
-                Thank you for taking the time to learn more about me and my work.
+                &emsp; Thank you for taking the time to learn more about me and my work.
                 My name is Robert Wood and I create quality web, desktop and mobile applications.
                 I enjoy using my technical knowledge to bring people's ideas to life and create useful functional software
-                products for the world. I have worked on both independent and team projects playing a role in helping develop
-                successful creations of multiple clients. My skill strengths may exist in one area, but I can adapt and overcome
-                gaps of my skill by self learning. I enjoy working on things that others tend to struggle with even if I am
-                not super comfortable in that area myself. These type of projects push me to broaden my skills and knowledge
-                even more than I already do and allows me to step up to make sure the job gets done and done correctly. I have worked in
-                both waterfall and agile enviroments and am constantly learning about new methods to do things. If you are
-                interested in learning more about me or my projects and skills, please feel free to contact me directly.
+                products for the world.
+                I have worked on personal and client based projects in both solo and team settings, playing a role in
+                helping develop successful creations in use today.
+                One of my greatest skills is the ability to adapt and overcome lack of a skill set and research and learn on my own.
+                I enjoy working on things that others tend to struggle with, even if I am not comfortable in that area myself.
+                These type of projects push me to broaden my skills and knowledge even more than I would from a project im comfortable in.
+                I have worked in both waterfall and agile enviroments and continually learning about new methods to do things.
+                If you are interested in learning more about me or my projects and skills, please feel free to contact me directly.
             </div>
         </div>
         <div class="text-center" id="projects">
@@ -131,12 +135,14 @@
             <div class="row mb-2">
                 <div class="col-sm-3">
                     <div class="card">
+                        <img class="card-img-top" src="images/www.JPG" alt="WhoWhereHow website image">
                         <div class="card-body">
-                            <img class="card-img-top" src="images/yatzy.JPG" alt="Card image cap">
-                            <h5 class="card-title">Yatzy</h5>
-                            <p class="card-text">Javascript Web Based Yatzy Game </p>
+                            <h5 class="card-title">Who Where How</h5>
+                            <p class="card-text">Website for Spinal Cord Injury Community</p>
+                            <a href="http://www.whowherehow.org" class="btn btn-primary">Check it out!</a>
                             <p>
-                                The web application was made primarily with JavaScript/JQuery, HTML and CSS.
+                                The web application was made with a variety of languages and frameworks including JavaScript/JQuery, HTML, CSS, .Net Core, C#, Ajax
+                                BootStrap and SQL Server. There were also a few APIS used in this including a few from Google and Facebook.
                             </p>
                         </div>
                     </div>
@@ -144,11 +150,15 @@
                 <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
-                            <img class="card-img-top" src="images/pig.JPG" alt="Card image cap">
-                            <h5 class="card-title">Pig Dice</h5>
-                            <p class="card-text">Javascript Web Based Pig Dice Game </p>
+                            <img class="card-img-top" src="images/iday.JPG" alt="Card image cap">
+                            <h5 class="card-title"> I DAY Dream  </h5>
+                            <p class="card-text">Volunteer and Dreamer Sign Up forms, that allows the client to have
+                                the data submitted directly to a database and emailed to themselves. These forms
+                                increase productivity by allowing the client to spend less time inputting data into
+                                an Excel file and allows a more convenient user interface to work with the data.</p>
+                            <a href="#" class="btn btn-primary">Check them out</a>
                             <p>
-                                The web application was made primarily with JavaScript/JQuery, HTML and CSS.
+                                These web forms and related work was made primarily with JavaScript/JQuery, PHP, HTML and CSS.
                             </p>
                         </div>
                     </div>
@@ -234,14 +244,12 @@
             <div class="row">
                 <div class="col-sm-3">
                     <div class="card">
-                        <img class="card-img-top" src="images/www.JPG" alt="WhoWhereHow website image">
                         <div class="card-body">
-                            <h5 class="card-title">Who Where How</h5>
-                            <p class="card-text">Website for Spinal Cord Injury Community</p>
-                            <a href="http://www.whowherehow.org" class="btn btn-primary">Check it out!</a>
+                            <img class="card-img-top" src="images/yatzy.JPG" alt="Card image cap">
+                            <h5 class="card-title">Yatzy</h5>
+                            <p class="card-text">Javascript Web Based Yatzy Game </p>
                             <p>
-                                The web application was made with a variety of languages and frameworks including JavaScript/JQuery, HTML, CSS, .Net Core, C#, Ajax
-                                BootStrap and SQL Server. There were also a few APIS used in this including a few from Google and Facebook.
+                                The web application was made primarily with JavaScript/JQuery, HTML and CSS.
                             </p>
                         </div>
                     </div>
@@ -249,12 +257,11 @@
                 <div class="col-sm-3">
                     <div class="card">
                         <div class="card-body">
-                            <img class="card-img-top" src="images/iday.JPG" alt="Card image cap">
-                            <h5 class="card-title"> I DAY Dream  </h5>
-                            <p class="card-text">Volunteer and Dreamer Sign Up forms</p>
-                            <a href="#" class="btn btn-primary">Check them out</a>
+                            <img class="card-img-top" src="images/pig.JPG" alt="Card image cap">
+                            <h5 class="card-title">Pig Dice</h5>
+                            <p class="card-text">Javascript Web Based Pig Dice Game </p>
                             <p>
-                                The web application was made primarily with JavaScript/JQuery, PHP, HTML and CSS.
+                                The web application was made primarily with JavaScript/JQuery, HTML and CSS.
                             </p>
                         </div>
                     </div>
@@ -294,13 +301,17 @@
                                     <div class="col-md-6">
                                         <div class="md-form mb-0">
                                             <input type="text" id="name" name="name" class="form-control">
-                                            <label for="name" class="">Your name</label>
+                                            <label for="name" class="">Your name<span class="req">*</span></label>
+
+                                            <span class="err" id="err-Name"> Please enter a name </span>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="md-form mb-0">
                                             <input type="text" id="email" name="email" class="form-control">
-                                            <label for="email" class="">Your email</label>
+                                            <label for="email" class="">Your email<span class="req">*</span></label>
+
+                                            <span class="err" id="err-email"> Please enter an email </span>
                                         </div>
                                     </div>
                                 </div>
@@ -308,7 +319,9 @@
                                     <div class="col-md-12">
                                         <div class="md-form mb-0">
                                             <input type="text" id="subject" name="subject" class="form-control">
-                                            <label for="subject" class="">Subject</label>
+                                            <label for="subject" class="">Subject  <span class="req">*</span></label>
+
+                                            <span class="err" id="err-subject"> Please enter a subject </span>
                                         </div>
                                     </div>
                                 </div>
@@ -317,14 +330,18 @@
                                         <div class="md-form">
                                             <textarea id="message" name="message" rows="2"
                                                       class="form-control md-textarea"></textarea>
-                                            <label for="message">Your message</label>
+                                            <label for="message">Your message <span class="req">*</span></label>
+
+                                            <span class="err" id="err-message"> Please enter a message</span>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="text-center text-md-left">
+                                    <button id="submit" type="submit" class="btn btn-primary ">Send</button>
+                                    <!--<a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>-->
+                                </div>
                             </form>
-                            <div class="text-center text-md-left">
-                                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-                            </div>
+
                             <div class="status"></div>
                         </div>
                         <div class="col-md-3 text-center">

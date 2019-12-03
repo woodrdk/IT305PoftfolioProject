@@ -45,14 +45,14 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.php#Contact">Contact</a>
+                <a class="nav-link" href="index.php">Index</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="http://rwood.greenriverdev.com/305/resume/index.html">Resume</a>
             </li>
-            <li class="nav-item">
+           <!-- <li class="nav-item">
                 <a class="nav-link" href="#">Portfolio</a>
-            </li>
+            </li>-->
             <li class="nav-item">
                 <a class="nav-link" href="guestbook.html">Guestbook</a>
             </li>
@@ -129,7 +129,7 @@
                               <td><a href='mailto:$email'>$email</a></td>
                               <td>$mailList</td>
                               <td>$mailFormat</td>
-                              <td><a href='$linked'>$linked</a></td>
+                              <td><a href='$linked' target='_blank'>$linked</a></td>
                               <td>$comment</td>
                               <td>$how</td>
                               <td>$when</td>";
