@@ -1,14 +1,17 @@
 #aboutMe {
-    height: 25%;
-    width: 25%;
+    height: 100%;
+    width: 100%;
     font-family: 'Rubik', sans-serif;
-    font-size: 10px;
+    font-size: 22px;
 }
 
 body{
     font-family: "Georgia", Georgia, serif;
 }
-
+.err{
+    color: red;
+    visibility: hidden;
+}
 @media(max-width:768px){
     .right-stick {top:55%; display:none}
 }
