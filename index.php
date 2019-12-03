@@ -139,7 +139,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Who Where How</h5>
                             <p class="card-text">Website for Spinal Cord Injury Community</p>
-                            <a href="http://www.whowherehow.org" class="btn btn-primary">Check it out!</a>
+                            <a href="http://www.whowherehow.org" class="btn btn-primary" target="_blank">Check it out!</a>
                             <p>
                                 The web application was made with a variety of languages and frameworks including JavaScript/JQuery, HTML, CSS, .Net Core, C#, Ajax
                                 BootStrap and SQL Server. There were also a few APIS used in this including a few from Google and Facebook.
@@ -156,7 +156,7 @@
                                 the data submitted directly to a database and emailed to themselves. These forms
                                 increase productivity by allowing the client to spend less time inputting data into
                                 an Excel file and allows a more convenient user interface to work with the data.</p>
-                            <a href="#" class="btn btn-primary">Check them out</a>
+                            <a href="https://ostrich-adventure.greenriverdev.com/" class="btn btn-primary" target="_blank">Check them out</a>
                             <p>
                                 These web forms and related work was made primarily with JavaScript/JQuery, PHP, HTML and CSS.
                             </p>
@@ -208,7 +208,7 @@
                             <img class="card-img-top" src="images/bulb.JPG" alt="Card image cap">
                             <h5 class="card-title">Bulb saver app</h5>
                             <p class="card-text">Simple project to calculate how long it would take to pay off the new bulbs based on what one would save in electricity.</p>
-                            <a href="https://github.com/woodrdk/BulbSaver" class="btn btn-primary">Go to the GitHub repo</a>
+                            <a href="https://github.com/woodrdk/BulbSaver" target="_blank" class="btn btn-primary">Go to the GitHub repo</a>
                             <p>
                                 This desktop application was made primarily with C#.
                             </p>
@@ -233,7 +233,7 @@
                             <img class="card-img-top" src="images/ElectronShopping.JPG" alt="Card image cap">
                             <h5 class="card-title">Electron Shopping List App</h5>
                             <p class="card-text">Desktop Shopping List App using Electron</p>
-                            <a href="https://github.com/woodrdk/Electron-Shopping-List" class="btn btn-primary">Go to the GitHub repo</a>
+                            <a href="https://github.com/woodrdk/Electron-Shopping-List" target="_blank" class="btn btn-primary">Go to the GitHub repo</a>
                             <p>
                                 The web application was made primarily with Electron, JavaScript/JQuery, HTML and CSS.
                             </p>
